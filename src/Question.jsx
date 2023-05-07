@@ -1,16 +1,16 @@
 import { MDBBtn, MDBCol, MDBRadio } from "mdb-react-ui-kit";
 import { useState } from "react";
 
-export const View = ({text, yes, no, id, last, onAnswer, onPrevious}) => {
+export const View = ({text, yes, no, id, last, onAnswer, onPrevious, category}) => {
     const [answer, setAnswer] = useState(yes)
 
     return (
         <MDBCol size="5" key={id}>
-        <form className="bg-white mt-3" action="">
-        <p className="fw-bold">
+        <div className="fw-bold">
+            <h4>{category}</h4>
             <span>Question {id} - </span>
             <span style={{marginLeft: 4}}>{text}</span>
-        </p>
+        </div>
         <MDBRadio
             name="flexRadioDefault"
             id="flexRadioDefault1"
@@ -25,7 +25,6 @@ export const View = ({text, yes, no, id, last, onAnswer, onPrevious}) => {
             checked={answer === no}
             onChange={({target: {checked}}) => setAnswer(checked ? no : yes)}
         />
-        </form>
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
             {id !== 1 && (
                 <MDBBtn onClick={onPrevious}>Previous</MDBBtn>

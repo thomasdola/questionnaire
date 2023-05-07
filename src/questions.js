@@ -1,5 +1,6 @@
 export const QUESTIONS = [
     {
+        "category": "AA",
         "text": "Name?",
         "id": 1,
         "yes": 1,
@@ -7,6 +8,7 @@ export const QUESTIONS = [
         "last": false
     },
     {
+        "category": "BA",
         "text": "Question 2",
         "id": 2,
         "yes": 0,
@@ -14,6 +16,7 @@ export const QUESTIONS = [
         "last": false
     },
     {
+        "category": "CA",
         "text": "Question 3",
         "id": 3,
         "yes": 0,
