@@ -14,7 +14,9 @@ export default function App() {
   const handleOnAnswer = ans => {
     answers.set(current.id, {q: current, a: ans})
     if(current.last){
-      console.log('done', {answers})
+      let t = 0;
+      answers.forEach(({a}) => t = a + t)
+      console.log('done', {answers, t})
     }else{
       const next_q = QUESTIONS.find(({id}) => id === current.id + 1)
       setCurrent(next_q)
